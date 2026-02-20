@@ -1,0 +1,22 @@
+[project]
+name = "ctrl"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "tturner",email = "tturner@bastiansolutions.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11, <3.14"
+dependencies = [
+    "numpy (>=2.4.2,<3.0.0)",
+    "pandas (>=3.0.1,<4.0.0)",
+    "matplot (>=0.1.9,<0.2.0)",
+    "lib (>=4.0.0,<5.0.0)"
+]
+
+[tool.poetry.group.dev.dependencies]
+pyinstaller = "^6.17.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

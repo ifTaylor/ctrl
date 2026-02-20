@@ -1,0 +1,29 @@
+from __future__ import annotations
+
+from dataclasses import dataclass, field
+from typing import Dict, Optional
+
+
+@dataclass
+class StepIdResult:
+    model: str
+
+    cv0: float
+    cv1: float
+    pv0: float
+    pv1: float
+    du: float
+    dy: float
+
+    t_step_s: float
+    theta_s: float
+
+    params: Dict[str, float] = field(default_factory=dict)
+
+    rmse: float = float("nan")
+    n_fit: int = 0
+
+    note: str = ""
+
+    def get(self, key: str, default: Optional[float] = None) -> Optional[float]:
+        return self.params.get(key, default)
