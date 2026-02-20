@@ -45,10 +45,6 @@ def generate_signal_csv(
     rng_seed: int = 12345,
     time_unit_seconds: bool = True,
 ) -> str:
-    """
-    Writes CSV to the app dir (same directory that contains kalman_ui.py).
-    Returns absolute path to the written file.
-    """
     app_dir = get_app_dir()
     out_path = os.path.join(app_dir, out_filename)
 
