@@ -32,8 +32,7 @@ def gaussian_noise(sigma: float, rng: random.Random) -> float:
 
 
 def get_app_dir() -> str:
-    # Directory where the running script/module resides
-    return os.path.dirname(os.path.abspath(__file__ + "/.."))  # services/.. -> app dir
+    return os.path.dirname(os.path.abspath(__file__ + "/.."))
 
 
 def generate_signal_csv(
@@ -53,7 +52,7 @@ def generate_signal_csv(
     app_dir = get_app_dir()
     out_path = os.path.join(app_dir, out_filename)
 
-    sigma_x = float(noise_amp) / 3.0  # 99.7% within +/- noise_amp
+    sigma_x = float(noise_amp) / 3.0
     rng = random.Random(int(rng_seed))
 
     total_samples = int((int(seconds) * 1000) / int(dt_ms))
